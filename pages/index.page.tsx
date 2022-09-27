@@ -1,4 +1,4 @@
-import Login from './login/index.page';
+import Login from './login/login';
 
 export default function Index() {
   return <Login />;
