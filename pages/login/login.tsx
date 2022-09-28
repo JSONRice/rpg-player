@@ -13,15 +13,18 @@ export default function Login() {
   const [isLoginFailed, setIsLoginFailed] = React.useState(false);
 
   async function login(data: typeof defaultValues) {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API}users/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_API}/login`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
+    );
 
-    if (response.status !== 201) {
+    if (response.status !== 200) {
       setIsLoginFailed(true);
     } else {
       router.replace('/dashboard');
