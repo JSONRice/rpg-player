@@ -11,7 +11,7 @@ export default function Index() {
         You can now log in to
         <a className="link" href={`${process.env.NEXT_PUBLIC_APP_URL}`}>
           {' '}
-          KIN HOME{' '}
+          RPG PLAYER{' '}
         </a>
         using your email and password.
       </div>
